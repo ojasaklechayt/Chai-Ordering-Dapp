@@ -1,5 +1,7 @@
+import React from "react";
 import { ethers } from "ethers";
 import "./Buy.css";
+
 const Buy = ({ state }) => {
   const buyChai = async (event) => {
     event.preventDefault();
@@ -10,30 +12,32 @@ const Buy = ({ state }) => {
     const amount = { value: ethers.utils.parseEther(amountvalue) };
     const transaction = await contract.buyChai(name, message, amount);
     await transaction.wait();
-    alert("Transaction is successfull");
+    alert("Transaction is successful");
     window.location.reload();
   };
+
   return (
-    <div className="center">
-      <h1>Thanks</h1>
-      <form onSubmit={buyChai}>
-        <div className="inputbox">
-          <input type="text" required="required" id="name" />
-          <span>Name</span>
+    <div className="buy-component-container">
+      <h1>Welcome to the app</h1>
+      <form onSubmit={buyChai} className="buy-component-form">
+        <div className="buy-component-input">
+          <input type="text" required id="name" />
+          <label htmlFor="name">Name</label>
         </div>
-        <div className="inputbox">
-          <input type="text" required="required" id="message" />
-          <span>Message</span>
+        <div className="buy-component-input">
+          <input type="text" required id="message" />
+          <label htmlFor="message">Message</label>
         </div>
-        <div className="inputbox">
-          <input type="text" required="required" id="amount" />
-          <span>Value</span>
+        <div className="buy-component-input">
+          <input type="text" required id="amount" />
+          <label htmlFor="amount">Value</label>
         </div>
-        <div className="inputbox">
+        <div className="buy-component-input">
           <input type="submit" value="Pay" disabled={!state.contract} />
         </div>
       </form>
     </div>
   );
 };
+
 export default Buy;

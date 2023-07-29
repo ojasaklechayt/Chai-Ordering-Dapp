@@ -46,8 +46,8 @@ function App() {
     template();
   }, []);
   return (
-    <div>
-      <p style={{ marginTop: "10px", marginLeft: "450px" }}>
+    <div class="container">
+      <p>
         <small>Connected Account - {account}</small>
       </p>
 

@@ -1,13 +1,29 @@
+/* Updated Stylish and Modern Table with Roboto Font in Dark Mode */
+
+/* Font */
+body {
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+/* Dark mode background color */
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
 .memo-container {
     margin-top: 20px;
     padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
+    background-color: #2d2d2d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .memo-heading {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 2.2rem;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .memo-table {
@@ -20,35 +36,28 @@
     background-color: #007bff;
     color: #fff;
     font-weight: bold;
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #007bff;
+    padding: 12px;
 }
 
 .memo-table-data {
-    padding: 10px;
-    border: 1px solid #dee2e6;
+    padding: 12px;
+    font-size: 1.2rem;
+    color: #f0f0f0;
 }
 
-.memo-table-data:first-child {
-    width: 100px;
+/* Dark mode table row background adjustments */
+.memo-table-data:nth-child(even) {
+    background-color: #232323;
 }
 
-.memo-table-data:nth-child(2) {
-    width: 200px;
+/* Add hover effect for better interaction */
+.memo-table-data:hover {
+    background-color: #3a3a3a;
+    cursor: pointer;
 }
 
-.memo-table-data:nth-child(3) {
-    width: 400px;
-}
-
-.memo-table-data:nth-child(4),
-.memo-table-data:nth-child(5) {
-    width: 300px;
-}
-
+/* Dark mode media query adjustments */
 @media screen and (max-width: 768px) {
-
     .memo-table-data:first-child,
     .memo-table-data:nth-child(2),
     .memo-table-data:nth-child(3) {
